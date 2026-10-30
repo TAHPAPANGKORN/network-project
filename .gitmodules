@@ -1,0 +1,9 @@
+[submodule "wordpress-theme"]
+	path = wordpress-theme
+	url = https://github.com/TAHPAPANGKORN/cs-landing-page-wp.git
+[submodule "dashboard-backend"]
+	path = dashboard-backend
+	url = https://github.com/TAHPAPANGKORN/cs-ai-scanner.git
+[submodule "dashboard-frontend"]
+	path = dashboard-frontend
+	url = https://github.com/TAHPAPANGKORN/cs-ai-dashboard-frontend.git
