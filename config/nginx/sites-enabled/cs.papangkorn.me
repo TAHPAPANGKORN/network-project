@@ -1,4 +1,4 @@
-# HTTP: รองรับการเข้าผ่านโดเมนและ IP
+# บล็อกพอร์ต 80 (HTTP) - เข้าผ่าน IP หรือ HTTP เสิร์ฟหน้าเว็บตรง
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -25,7 +25,7 @@ server {
     error_log /var/log/nginx/cs_error.log;
 }
 
-# HTTPS: รองรับการเข้าผ่านโดเมนพร้อมใบรับรอง SSL
+# บล็อกพอร์ต 443 (HTTPS) - สำหรับเข้าผ่านโดเมนพร้อมใบรับรอง SSL
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -47,12 +47,9 @@ server {
     location ~ /\.ht {
         deny all;
     }
-
     client_max_body_size 64M;
-
     ssl_certificate /etc/letsencrypt/live/cs.papangkorn.me/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/cs.papangkorn.me/privkey.pem;
-
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
