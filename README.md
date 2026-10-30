@@ -6,3 +6,7 @@
 - dashboard backend :https://github.com/TAHPAPANGKORN/cs-ai-dashboard-frontend.git
 - dashboard frontend :https://github.com/TAHPAPANGKORN/cs-ai-scanner
 
+
+# Product Link
+- dashboard: https://cs-buu-dash.vercel.app
+- wordpress: https://cs.papangkorn.me
