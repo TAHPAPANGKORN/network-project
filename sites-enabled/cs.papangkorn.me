@@ -1,0 +1,61 @@
+# HTTP: รองรับการเข้าผ่านโดเมนและ IP
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name cs.papangkorn.me 85.211.196.32;
+
+    root /var/www/html;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    access_log /var/log/nginx/cs_access.log;
+    error_log /var/log/nginx/cs_error.log;
+}
+
+# HTTPS: รองรับการเข้าผ่านโดเมนพร้อมใบรับรอง SSL
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name cs.papangkorn.me;
+
+    root /var/www/html;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    client_max_body_size 64M;
+
+    ssl_certificate /etc/letsencrypt/live/cs.papangkorn.me/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/cs.papangkorn.me/privkey.pem;
+
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    access_log /var/log/nginx/cs_ssl_access.log;
+    error_log /var/log/nginx/cs_ssl_error.log;
+}
