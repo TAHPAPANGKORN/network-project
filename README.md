@@ -13,6 +13,6 @@
 
 ## รายงานโครงการ
 
-[![หน้าปกรายงาน](docs/report-cover.png)](<รายงาน network.pdf>)
+[![หน้าปกรายงาน](docs/report-cover.jpg)](<docs/รายงาน network.pdf>)
 
-[เปิดอ่านรายงานฉบับเต็ม PDF](<รายงาน network.pdf>)
+[เปิดอ่านรายงานฉบับเต็ม PDF](<docs/รายงาน network.pdf>)
