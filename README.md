@@ -10,3 +10,9 @@
 # Product Link
 - dashboard: https://cs-buu-dash.vercel.app
 - wordpress: https://cs.papangkorn.me
+
+## รายงานโครงการ
+
+[![หน้าปกรายงาน](docs/report-cover.png)](<รายงาน network.pdf>)
+
+[เปิดอ่านรายงานฉบับเต็ม PDF](<รายงาน network.pdf>)
